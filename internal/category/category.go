@@ -23,12 +23,12 @@ func GenerateCategory(name string) *models.Category {
 
 	return &newCategory
 }
-func SaveCategoryToFile(data []*models.Category, fileName string) {
+func SaveCategoryToFile(data []*models.Category, pathOut string, fileName string) {
 	b, err := json.Marshal(data)
 
 	if err != nil {
 		fmt.Printf("JOPA")
 	}
 
-	os.WriteFile("data/"+fileName+".json", b, 0644)
+	os.WriteFile(pathOut+"/"+fileName+".json", b, 0644)
 }
